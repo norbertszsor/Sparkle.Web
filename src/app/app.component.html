@@ -1,11 +1,14 @@
-<div fxLayout="row" fxFlex="100">
-  <mat-toolbar color="primary">
-    <span>Sparkle.Web</span>
-    <button mat-raised-button (click)="drawer.toggle()">About</button>
+<div fxLayout="column" style="height: 100%;">
+  <mat-toolbar color="primary" fxFlex="8">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex="100">
+      <span fxFlex="nogrow">Sparkle.Web</span>
+      <button mat-raised-button color="primary" (click)="drawer.toggle()" fxFlex="nogrow">About</button>
+    </div>
   </mat-toolbar>
-  <mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer-container fxLayout="column" fxFlex style="height: 100%;" [hasBackdrop]="true">
     <mat-drawer #drawer mode="over"></mat-drawer>
-    <mat-drawer-content>     
+    <mat-drawer-content style="height: 100%;">
+      <!-- Content for the rest of the page -->
     </mat-drawer-content>
   </mat-drawer-container>
 </div>

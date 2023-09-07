@@ -23,13 +23,18 @@
       >
         <mat-form-field fxFlex="20%">
           <mat-label>Company</mat-label>
-          <input matInput placeholder="Company" disabled />
+          <input
+            matInput
+            placeholder="Company"
+            [value]="company?.name"
+            disabled
+          />
         </mat-form-field>
         <mat-form-field fxFlex="20%">
           <mat-label>Time stamp</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let option of timeStampOptions" [value]="option">
-              {{ option }}
+          <mat-select [(ngModel)]="selectedTimeStamp" name="timeStampSelect">
+            <mat-option *ngFor="let option of selectOptions" [value]="option">
+              {{ option?.display }}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -39,14 +44,18 @@
             matInput
             [matAutocomplete]="auto"
             placeholder="Search"
+            [(ngModel)]="selectedMeterId"
           />
-          <mat-autocomplete #auto="matAutocomplete">
+          <mat-autocomplete
+            #auto="matAutocomplete"
+            (optionSelected)="onOptionSelected($event)"
+          >
             <!-- Add your autocomplete options here -->
             <mat-option
               *ngFor="let option of autocompleteOptions"
-              [value]="option"
+              [value]="option?.id"
             >
-              {{ option }}
+              {{ option?.name }}
             </mat-option>
           </mat-autocomplete>
           <button
@@ -54,12 +63,13 @@
             color="primary"
             fxFlex="nogrow"
             style="height: 23px"
+            (click)="onButtonClick($event)"
           >
             Generate
           </button>
         </mat-form-field>
         <div class="form-spinner">
-          <mat-spinner style="width: 45px; height: 45px"></mat-spinner>
+          <mat-spinner *ngIf="isLoading" style="width: 45px; height: 45px"></mat-spinner>
         </div>
       </div>
       <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between start">
@@ -68,7 +78,7 @@
             fxFlex
             appendOnly
             itemSize="5"
-            class = "scrollable-list"
+            class="scrollable-list"
           >
             <div
               *cdkVirtualFor="
@@ -85,15 +95,15 @@
         <div fxFlex="60%">
           <!-- Content for the second column -->
           <canvas
-          fxFlex
-          class = "chart"
-          baseChart
-          [datasets]="chartData"
-          [labels]="chartLabels"
-          [options]="chartOptions"
-          [legend]="chartLegend"
-        >
-        </canvas>
+            fxFlex
+            class="chart"
+            baseChart
+            [datasets]="chartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [legend]="chartLegend"
+          >
+          </canvas>
         </div>
       </div>
     </mat-drawer-content>

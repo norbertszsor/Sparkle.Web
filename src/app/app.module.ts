@@ -18,6 +18,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule} from '@angular/material/select';
 import { NgChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +40,7 @@ import { NgChartsModule } from 'ng2-charts';
     MatProgressSpinnerModule,
     MatSelectModule,
     NgChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

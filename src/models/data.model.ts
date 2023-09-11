@@ -24,3 +24,7 @@ export interface PredictionDto {
   meterName?: string;
   prediction?: { [key: string]: number } | null;
 }
+
+export interface ComparisonDto extends PredictionDto {
+  previous?: { [key: string]: number } | null;
+}

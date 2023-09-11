@@ -5,13 +5,34 @@
         <span>Sparkle.Web</span>
         <img [src]="logoUrl" height="50px" width="50px" />
       </div>
-      <button mat-raised-button (click)="drawer.toggle()" fxFlex="nogrow">
-        About
-      </button>
     </div>
   </mat-toolbar>
+  <div
+    class="drawer-container"
+    fxLayout="column"
+    fxFlexAlign="start center"
+    *ngIf="this.drawer.opened"
+  >
+    <p class="no-connection-text">
+      Error: Cannot establish connection with sparklecore.api server.
+    </p>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="onRecconnectClick()"
+      fxFlex="nogrow"
+    >
+      Try reconnect
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
   <mat-drawer-container fxLayout="column" fxFlex="100" [hasBackdrop]="true">
-    <mat-drawer #drawer mode="over"></mat-drawer>
+    <mat-drawer
+      #drawer
+      mode="over"
+      fxLayoutAlign="start start"
+      disableClose
+    ></mat-drawer>
     <mat-drawer-content fxLayout="column" fxFlex="100">
       <!-- Content for the rest of the page -->
       <div
@@ -21,7 +42,7 @@
         fxLayoutGap="20px"
         style="min-height: 200px; margin-left: 15%; margin-right: 15%"
       >
-        <mat-form-field fxFlex="20%">
+        <mat-form-field fxFlex="15%">
           <mat-label>Company</mat-label>
           <input
             matInput
@@ -30,7 +51,21 @@
             disabled
           />
         </mat-form-field>
-        <mat-form-field fxFlex="20%">
+        <mat-form-field fxFlex="15%">
+          <mat-label>Method</mat-label>
+          <mat-select
+            name="reggressorMethod"
+            (selectionChange)="onMethodChange($event)"
+          >
+            <mat-option
+              *ngFor="let option of selectedReggressorMethodOptions"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex="15%">
           <mat-label>Time stamp</mat-label>
           <mat-select [(ngModel)]="selectedTimeStamp" name="timeStampSelect">
             <mat-option *ngFor="let option of selectOptions" [value]="option">
@@ -39,17 +74,15 @@
           </mat-select>
         </mat-form-field>
         <mat-form-field fxFlex class="autocomplete">
+          <mat-label>Search</mat-label>
           <input
             type="text"
             matInput
             [matAutocomplete]="auto"
-            placeholder="Search"
+            placeholder="meter name"
             [(ngModel)]="selectedMeterId"
           />
-          <mat-autocomplete
-            #auto="matAutocomplete"
-            (optionSelected)="onOptionSelected($event)"
-          >
+          <mat-autocomplete #auto="matAutocomplete">
             <!-- Add your autocomplete options here -->
             <mat-option
               *ngFor="let option of autocompleteOptions"
@@ -62,14 +95,17 @@
             mat-raised-button
             color="primary"
             fxFlex="nogrow"
-            style="height: 23px"
+            style="height: 23px; margin-top: -6px"
             (click)="onButtonClick($event)"
           >
             Generate
           </button>
         </mat-form-field>
         <div class="form-spinner">
-          <mat-spinner *ngIf="isLoading" style="width: 45px; height: 45px"></mat-spinner>
+          <mat-spinner
+            *ngIf="isLoading"
+            style="width: 45px; height: 45px"
+          ></mat-spinner>
         </div>
       </div>
       <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between start">
@@ -101,7 +137,6 @@
             [datasets]="chartData"
             [labels]="chartLabels"
             [options]="chartOptions"
-            [legend]="chartLegend"
           >
           </canvas>
         </div>
@@ -119,7 +154,11 @@
       fxLayoutGap="30px"
     >
       <a mat-button href="https://github.com/norbertszsor" target="_blank">
-        <mat-icon>error</mat-icon>
+        <mat-icon>info</mat-icon>
+        About
+      </a>
+      <a mat-button href="https://github.com/norbertszsor" target="_blank">
+        <mat-icon>language</mat-icon>
         GitHub
       </a>
       <a

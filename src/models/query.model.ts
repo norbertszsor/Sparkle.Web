@@ -3,7 +3,7 @@ import { HttpParams } from '@angular/common/http';
 type PagedListQuery = {
   page?: number;
   pageSize?: number;
-}
+};
 
 export interface GetCompanyQuery extends Object {}
 
@@ -16,4 +16,4 @@ export interface GetPredictionQuery extends Object {
   Hours: number;
 }
 
-
+export interface GetComparisonQuery extends Object, GetPredictionQuery {}

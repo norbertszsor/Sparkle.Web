@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,9 +15,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,7 +41,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatProgressSpinnerModule,
     MatSelectModule,
     NgChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

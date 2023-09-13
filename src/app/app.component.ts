@@ -14,6 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import zoomPlugin from 'chartjs-plugin-zoom';
 Chart.register(zoomPlugin);
 import { ZoomPluginOptions } from 'chartjs-plugin-zoom/types/options';
+import { timeInterval, timeout } from 'rxjs';
 
 type timeStampOption = {
   display: string;
@@ -139,31 +140,34 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.sparkleApiService.getCompany({}).subscribe(
-      (company) => {
-        this.company = company;
-        if (company) {
-          this.sparkleApiService
-            .getMeterList({
-              companyId: company.id,
-            })
-            .subscribe(
-              (meters) => {
-                this.autocompleteOptions = meters.items ?? [];
-              },
-              (error) => {
-                this.handleApiError(error);
-              }
-            );
+    this.sparkleApiService
+      .getCompany({})
+      .pipe(timeout(4000))
+      .subscribe(
+        (company) => {
+          this.company = company;
+          if (company) {
+            this.sparkleApiService
+              .getMeterList({
+                companyId: company.id,
+              })
+              .subscribe(
+                (meters) => {
+                  this.autocompleteOptions = meters.items ?? [];
+                },
+                (error) => {
+                  this.handleApiError(error);
+                }
+              );
+          }
+        },
+        (error) => {
+          if (this.drawer) {
+            this.drawer.open();
+          }
+          this.handleApiError(error);
         }
-      },
-      (error) => {
-        if (this.drawer) {
-          this.drawer.open();
-        }
-        this.handleApiError(error);
-      }
-    );
+      );
   }
 
   onButtonClick(event: Event) {

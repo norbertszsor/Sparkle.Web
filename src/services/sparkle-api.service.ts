@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environmet } from 'src/environment';
+import { environment } from 'src/environments/environment';
 import {
   CompanyDto,
   ComparisonDto,
@@ -20,7 +20,7 @@ import {
   providedIn: 'root',
 })
 export class SparkleApiService {
-  private baseUrl = environmet.apiUrl;
+  private baseUrl = environment.apiUrl;
 
   constructor(private _client: HttpClient) {}
 

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://sparklecore.bsite.net/api',
+  apiUrl: 'https://sparklecore7.bsite.net/api',
 };

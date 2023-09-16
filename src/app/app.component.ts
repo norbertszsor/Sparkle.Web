@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
       y: {
         title: {
           display: true,
-          text: 'Usage(mWh)',
+          text: 'Usage(kWh)',
         },
       },
     },

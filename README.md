@@ -93,10 +93,6 @@ Access the live version of Sparkle.Web at [https://sparkle-web.onrender.com/](ht
 
 The current version of Sparkle.Web is 1.0.0.
 
-## License
-
-This project is licensed under the [MIT](LICENSE.md). See the [LICENSE.md](LICENSE.md) file for details.
-
 ## Contribution
 
 Contributions to Sparkle.Web are welcome! If you want to contribute, please follow these steps:

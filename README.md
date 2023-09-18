@@ -47,9 +47,7 @@ Before getting started, ensure you have the following prerequisites:
 
    Access the application at [http://localhost:4200/](http://localhost:4200/).
 
-2. Explore the live version at [https://sparkle-web.onrender.com/](https://sparkle-web.onrender.com/).
-
-3. Use the interface to perform energy usage forecasting based on provided data.
+2. Use the interface to perform energy usage forecasting based on provided data.
 
 ## Deployment
 
@@ -83,9 +81,6 @@ This step is essential for the live version to communicate with the Sparkle.Core
 Remember to configure your web server or hosting platform to handle any server-side routing necessary for your Angular application.
 
 For more advanced deployment options, consider automating the build and deployment process using CI/CD pipelines.
-```
-
-This updated section guides users on how to manually build and deploy the Angular application to the `dist/` directory, which can then be served by a web server or hosting platform.
 
 ## Live Version
 
@@ -97,7 +92,7 @@ The current version of Sparkle.Web is 1.0.0.
 
 ## License
 
-This project is licensed under the [License Name Here](LICENSE.md). See the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the [MIT](LICENSE.md). See the [LICENSE.md](LICENSE.md) file for details.
 
 ## Contribution
 
@@ -114,6 +109,3 @@ Contributions to Sparkle.Web are welcome! If you want to contribute, please foll
 We appreciate your contributions to make Sparkle.Web even better! If you have any questions or need more information, feel free to reach out.
 
 For more information or questions, please don't hesitate to contact us. Thank you for using Sparkle.Web!
-```
-
-You can replace placeholders like `yourusername`, `License Name Here`, and add more details specific to your project as needed.

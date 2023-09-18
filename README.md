@@ -2,6 +2,9 @@
 
 Sparkle.Web is a part of the Sparkle project and serves as a web-based interface for forecasting energy usage. It's built using Angular, featuring technologies like fxFlex, RxJS, and Material Angular, and provides users with graphical representations of forecasts and essential settings for accurate predictions.
 
+![sparkle.web sample](https://github.com/norbertszsor/Sparkle.Web/assets/47736350/3db91712-33cc-4854-b6f7-01de67744cb3)
+
+
 ## Key Features
 
 - **Modern User Interface:** Sparkle.Web offers a modern web-based interface for energy usage forecasting.

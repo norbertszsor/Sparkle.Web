@@ -4,7 +4,6 @@ Sparkle.Web is a part of the Sparkle project and serves as a web-based interface
 
 ![sparklewebsample](https://github.com/norbertszsor/Sparkle.Web/assets/47736350/b00613af-3fc0-4ea1-9b9b-60bb57b7f645)
 
-
 ## Key Features
 
 - **Modern User Interface:** Sparkle.Web offers a modern web-based interface for energy usage forecasting.

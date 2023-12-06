@@ -1,12 +1,4 @@
-export interface PagedList<T> {
-  items?: T[];
-  totalCount: number;
-  pageIndex: number;
-  pageSize: number;
-  totalPages: number;
-  hasPreviousPage: boolean;
-  hasNextPage: boolean;
-}
+import { Dictionary } from 'src/shared/module/dictionary.interface';
 
 export interface CompanyDto {
   id?: string;
@@ -22,9 +14,9 @@ export interface MeterDto {
 
 export interface PredictionDto {
   meterName?: string;
-  prediction?: { [key: string]: number } | null;
+  prediction?: Dictionary<string, number> | null;
 }
 
 export interface ComparisonDto extends PredictionDto {
-  previous?: { [key: string]: number } | null;
+  previous?: Dictionary<string, number> | null;
 }

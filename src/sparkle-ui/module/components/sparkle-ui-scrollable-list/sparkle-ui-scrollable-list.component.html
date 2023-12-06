@@ -1,0 +1,9 @@
+<div class="scrollable-list" style="height: 100%">
+  <mat-list class="custom-list">
+    <mat-list-item *ngFor="let item of items">
+      [{{ item.key | sparkleDate : "yyyy-MM-dd HH:mm" }}]:
+      {{ item.value | sparkleDecimal : "1.0-4" }}
+    </mat-list-item>
+  </mat-list>
+  <div class="empty-info" *ngIf="items.length === 0">No items available.</div>
+</div>

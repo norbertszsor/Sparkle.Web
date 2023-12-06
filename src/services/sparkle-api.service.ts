@@ -6,7 +6,6 @@ import {
   CompanyDto,
   ComparisonDto,
   MeterDto,
-  PagedList,
   PredictionDto,
 } from 'src/models/data.model';
 import {
@@ -15,6 +14,7 @@ import {
   GetMeterListQuery,
   GetPredictionQuery,
 } from 'src/models/query.model';
+import { PagedList } from 'src/shared/module/paged-list.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +26,7 @@ export class SparkleApiService {
 
   public getCompany(query: GetCompanyQuery): Observable<CompanyDto> {
     return this._client.get<CompanyDto>(`${this.baseUrl}/company/get`, {
-      params: this._toQueryParams(query),
+      params: this.convertObjectToHttpParams(query),
     });
   }
 
@@ -35,29 +35,29 @@ export class SparkleApiService {
   ): Observable<PagedList<MeterDto>> {
     return this._client.get<PagedList<MeterDto>>(
       `${this.baseUrl}/meter/get/list`,
-      { params: this._toQueryParams(query) }
+      { params: this.convertObjectToHttpParams(query) }
     );
   }
 
   public getPrediction(query: GetPredictionQuery): Observable<PredictionDto> {
     return this._client.get<PredictionDto>(
-      `${this.baseUrl}/reggressor/get/prediction`,
+      `${this.baseUrl}/regressor/get/prediction`,
       {
-        params: this._toQueryParams(query),
+        params: this.convertObjectToHttpParams(query),
       }
     );
   }
 
   public getComparison(query: GetComparisonQuery): Observable<ComparisonDto> {
     return this._client.get<ComparisonDto>(
-      `${this.baseUrl}/reggressor/get/comparison`,
+      `${this.baseUrl}/regressor/get/comparison`,
       {
-        params: this._toQueryParams(query),
+        params: this.convertObjectToHttpParams(query),
       }
     );
   }
 
-  private _toQueryParams(query: any): HttpParams {
+  private convertObjectToHttpParams(query: any): HttpParams {
     var params = new HttpParams();
     Object.keys(query).forEach((key) => {
       if (query[key] != null) {

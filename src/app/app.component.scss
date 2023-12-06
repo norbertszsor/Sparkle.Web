@@ -1,29 +1,3 @@
-.nav-toolbar {
-  min-height: 50px;
-}
-.form-spinner {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 13px;
-}
-
-.example-alternate {
-  background: rgba(63, 81, 181, 0.1);
-}
-
-.chart {
-  margin-left: 5%;
-  margin-right: 25%;
-  height: 425px;
-}
-
-.scrollable-list {
-  margin-top: 5px;
-  margin-left: 25%;
-  height: 390px;
-  border: 1px solid black;
-}
-
 .drawer-container {
   position: absolute;
   left: 50%;
@@ -31,16 +5,6 @@
   transform: translate(-50%, 0);
 
   z-index: 999;
-}
-.no-connection-text {
-  background-color: rgba(206, 17, 38, 0.2);
-  color: rgb(252, 207, 207);
-  padding: 1rem 1rem 1.5rem;
-  font-weight: bold;
-  color: rgb(232, 59, 70);
-  font-size: 1.2em;
-  margin-bottom: 1rem;
-  font-family: sans-serif;
 }
 
 .mat-drawer-container {

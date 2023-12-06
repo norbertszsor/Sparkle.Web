@@ -17,10 +17,11 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { NgChartsModule } from 'ng2-charts';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import { SparkleUiModule } from 'src/sparkle-ui/sparkle-ui.module';
+import { SparkleApiInterceptor } from 'src/shared/module/sparkle-api.interceptor';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -28,7 +29,6 @@ import { MatTabsModule } from '@angular/material/tabs';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
@@ -44,8 +44,16 @@ import { MatTabsModule } from '@angular/material/tabs';
     HttpClientModule,
     MatSnackBarModule,
     MatTabsModule,
+    MatToolbarModule,
+    SparkleUiModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SparkleApiInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

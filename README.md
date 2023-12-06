@@ -1,8 +1,8 @@
-# Sparkle.Web v1.0.0
+# Sparkle.Web
 
 Sparkle.Web is a part of the Sparkle project and serves as a web-based interface for forecasting energy usage. It's built using Angular, featuring technologies like fxFlex, RxJS, and Material Angular, and provides users with graphical representations of forecasts and essential settings for accurate predictions.
 
-![sparklewebsample](https://github.com/norbertszsor/Sparkle.Web/assets/47736350/b00613af-3fc0-4ea1-9b9b-60bb57b7f645)
+![sparklewebsample](https://github.com/norbertszsor/Sparkle.Web/assets/47736350/2987befb-4428-4261-b7b5-40169ec944e8)
 
 ## Key Features
 
@@ -90,20 +90,4 @@ Access the live version of Sparkle.Web at [https://sparkle-web.onrender.com/](ht
 
 ## Version
 
-The current version of Sparkle.Web is 1.0.0.
-
-## Contribution
-
-Contributions to Sparkle.Web are welcome! If you want to contribute, please follow these steps:
-
-1. Fork the repository on GitHub.
-
-2. Create a new branch with a descriptive name for your feature or bug fix.
-
-3. Make your changes and ensure that the code passes all tests.
-
-4. Submit a pull request with a clear description of the changes you've made.
-
-We appreciate your contributions to make Sparkle.Web even better! If you have any questions or need more information, feel free to reach out.
-
-For more information or questions, please don't hesitate to contact us. Thank you for using Sparkle.Web!
+The current version of Sparkle Web can be found there [https://github.com/norbertszsor/Sparkle.Web/releases](https://github.com/norbertszsor/Sparkle.Web/releases)
